@@ -1,5 +1,3 @@
-# Windows Engine 18.09
-
 ## Installation
 
 [Installing EE 18.09 Beta 1 for Windows Server](https://github.com/carlfischer1/engine-18.09/blob/master/installation.md)
