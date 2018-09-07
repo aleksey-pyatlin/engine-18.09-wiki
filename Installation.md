@@ -40,7 +40,7 @@ Server:
   Experimental:     false
   ```
   
-7. Pre-pull IIS image (optional)
+5. Pre-pull IIS image (optional)
 
 ```
 docker pull microsoft/iis:windowsservercore-1709
