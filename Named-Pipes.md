@@ -1,5 +1,3 @@
-# Using Windows named pipes
-
 1. Run a process-isolated container with a mounted named pipe
 
 ```
