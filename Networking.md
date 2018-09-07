@@ -1,8 +1,8 @@
-# Setup
+## Setup
 
 The ingress service publishing and VIP service discovery walkthroughs start from a UCP cluster with minimum one Linux master and two Windows Server 1709 workers, all running 18.09 beta 1.
 
-# Ingress service publishing
+## Ingress service publishing
 Ensure port 8080 is open in security group used by the worker VMs
 
 `docker service create --name iis --replicas 1 -p 8080:80 --constraint node.platform.os==windows microsoft/iis:windowsservercore-1709`
@@ -11,7 +11,7 @@ Browse to `http://<Public IP address of any VM in the swarm>:8080`
 
 Default IIS website should be displayed
 
-# VIP service discovery
+## VIP service discovery
 
 NOTE: VIP service discovery does not currently work with Windows Server 1803
 
