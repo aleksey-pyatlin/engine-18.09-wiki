@@ -1,5 +1,3 @@
-# Installing the 18.09 Beta 1 engine on Windows Server
-
 1. On a Windows Server 1709 host, open a PowerShell window
 
 2. If an existing version of Docker EE is installed, remove it
