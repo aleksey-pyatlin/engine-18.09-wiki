@@ -16,7 +16,7 @@
 
 `start-service docker`
 
-5. Verify Docker is running
+4. Verify Docker is running
 
 ```
 docker version
