@@ -4,7 +4,7 @@
 
 `uninstall-package docker -provider dockermsftprovider`
 
-3. Download and start the 18.09 beta 1 build
+3. Download and start the 18.09 beta 3 build
 
 `Invoke-WebRequest -URI "https://s3-us-west-2.amazonaws.com/internal-docker-ee-builds/windows-server/18.09/docker-18.09.0-beta3.zip" -usebasicparsing -outfile docker-18.09.0-ee-1-beta3.zip`
 
