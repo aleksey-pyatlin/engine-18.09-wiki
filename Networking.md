@@ -1,6 +1,6 @@
 ## Setup
 
-The ingress service publishing and VIP service discovery walkthroughs start from a UCP cluster with minimum one Linux master and two Windows Server 1709 workers, all running 18.09 beta3.
+The ingress service publishing and VIP service discovery walkthroughs start from a UCP cluster with minimum one Linux master and two Windows Server 1709 workers, all running 18.09 beta3. Ingress service publishing is also available with Windows Server 1809 workers.
 
 ## Ingress service publishing
 Ensure port 8080 is open in security group used by the worker VMs
