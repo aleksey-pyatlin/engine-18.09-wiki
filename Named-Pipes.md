@@ -1,3 +1,5 @@
+This example uses Windows Server 1709. It is also supported on Windows Server 1803.
+
 1. Run a process-isolated container with a mounted named pipe
 
 ```
