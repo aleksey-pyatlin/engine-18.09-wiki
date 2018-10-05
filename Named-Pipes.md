@@ -11,21 +11,21 @@ docker run -it -v '\\.\pipe\docker_engine:\\.\pipe\docker_engine' -v 'c:\docker:
 ```
 c:\docker\docker version
 Client:
- Version:           18.09.0-ee-1-beta1
+ Version:           18.09.0-beta3
  API version:       1.39
  Go version:        go1.10.3
- Git commit:        aa002c503a
+ Git commit:        1bfae8ea39
  Built:             unknown-buildtime
  OS/Arch:           windows/amd64
  Experimental:      false
 
 Server:
  Engine:
-  Version:          18.09.0-ee-1-beta1
+  Version:          18.09.0-beta3
   API version:      1.39 (minimum version 1.24)
   Go version:       go1.10.3
-  Git commit:       aa002c503a
-  Built:            09/06/2018 21:36:33
+  Git commit:       1bfae8ea39
+  Built:            10/04/2018 23:43:02
   OS/Arch:          windows/amd64
   Experimental:     false
 ```
