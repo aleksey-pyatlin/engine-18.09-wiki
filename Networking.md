@@ -1,6 +1,6 @@
 ## Setup
 
-The ingress service publishing and VIP service discovery walkthroughs start from a UCP cluster with minimum one Linux master and two Windows Server 1709 workers, all running 18.09 beta3. Ingress service publishing is also available with Windows Server 1809 workers.
+The ingress service publishing and VIP service discovery walkthroughs start from a UCP cluster with minimum one Linux master and two Windows Server 1709 workers, all running 18.09 beta3.
 
 ## Ingress service publishing
 Ensure port 8080 is open in security group used by the worker VMs
@@ -12,8 +12,6 @@ Browse to `http://<Public IP address of any VM in the swarm>:8080`
 Default IIS website should be displayed
 
 ## VIP service discovery
-
-NOTE: VIP service discovery does not currently work with Windows Server 1803
 
 Create an overlay network and deploy two services, each will get a VIP address:
 
@@ -60,4 +58,52 @@ Links             : {@{outerHTML=<a href="http://go.microsoft.com/fwlink/?linkid
                     href=http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409}}
 ParsedHtml        :
 RawContentLength  : 703
+```
+
+NOTE: VIP service discovery on Windows Server 1803 requires an additional step to open the Swarm DNS firewall port
+
+```
+PS C:\> New-NetFirewallRule -DisplayName "Swarm DNS" -Direction Inbound -Action Allow -Protocol UDP -LocalPort 53
+
+Name                  : {27ab302d-5a4c-4ce8-98c8-2c67ccb3643f}
+DisplayName           : Swarm DNS
+Description           :
+DisplayGroup          :
+Group                 :
+Enabled               : True
+Profile               : Any
+Platform              : {}
+Direction             : Inbound
+Action                : Allow
+EdgeTraversalPolicy   : Block
+LooseSourceMapping    : False
+LocalOnlyMapping      : False
+Owner                 :
+PrimaryStatus         : OK
+Status                : The rule was parsed successfully from the store. (65536)
+EnforcementStatus     : NotApplicable
+PolicyStoreSource     : PersistentStore
+PolicyStoreSourceType : Local
+
+PS C:\> New-NetFirewallRule -DisplayName "Swarm DNS" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 53
+
+Name                  : {79a20f1e-ead1-4ff3-b878-a150427db2a4}
+DisplayName           : Swarm DNS
+Description           :
+DisplayGroup          :
+Group                 :
+Enabled               : True
+Profile               : Any
+Platform              : {}
+Direction             : Inbound
+Action                : Allow
+EdgeTraversalPolicy   : Block
+LooseSourceMapping    : False
+LocalOnlyMapping      : False
+Owner                 :
+PrimaryStatus         : OK
+Status                : The rule was parsed successfully from the store. (65536)
+EnforcementStatus     : NotApplicable
+PolicyStoreSource     : PersistentStore
+PolicyStoreSourceType : Local
 ```
