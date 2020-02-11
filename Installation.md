@@ -6,13 +6,13 @@
 
 3. Download and start the 18.09 beta 3 build
 
-`Invoke-WebRequest -URI "https://s3-us-west-2.amazonaws.com/internal-docker-ee-builds/windows-server/18.09/docker-18.09.0-beta3.zip" -usebasicparsing -outfile docker-18.09.0-beta3.zip`
+`Invoke-WebRequest -URI "https://s3-us-west-2.amazonaws.com/internal-docker-ee-builds/windows-server/18.09/docker-18.09.4.zip" -usebasicparsing -outfile docker-18.09.4.zip`
 
-`expand-archive docker-18.09.0-beta3.zip c:\`
+`expand-archive docker-18.09.4.zip C:\Program Files`
 
-`$Env:Path += ";c:\docker;"`
+`$Env:Path += ";C:\Program Files\docker;"`
 
-`c:\docker\dockerd --register-service`
+`c:\Program Files\docker\dockerd --register-service`
 
 `start-service docker`
 
@@ -21,21 +21,21 @@
 ```
 docker version
 Client:
- Version:           18.09.0-beta3
+ Version:           18.09.4
  API version:       1.39
- Go version:        go1.10.3
- Git commit:        1bfae8ea39
- Built:             unknown-buildtime
+ Go version:        go1.10.8
+ Git commit:        c3516c43ef
+ Built:             03/27/2019 18:22:15
  OS/Arch:           windows/amd64
  Experimental:      false
 
 Server:
  Engine:
-  Version:          18.09.0-beta3
+  Version:          18.09.4
   API version:      1.39 (minimum version 1.24)
-  Go version:       go1.10.3
-  Git commit:       1bfae8ea39
-  Built:            10/04/2018 23:43:02
+  Go version:       go1.10.8
+  Git commit:       c3516c43ef
+  Built:            03/27/2019 18:20:29
   OS/Arch:          windows/amd64
   Experimental:     false
   ```
