@@ -11,6 +11,7 @@
 `expand-archive docker-18.09.4.zip 'C:\Program Files'`
 
 `$oldpath = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path`
+
 `$newpath = “$oldpath;;C:\Program Files\docker”`
 
 `Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $newPath`
