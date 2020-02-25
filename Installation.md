@@ -8,7 +8,7 @@
 
 `Invoke-WebRequest -URI "https://s3-us-west-2.amazonaws.com/internal-docker-ee-builds/windows-server/18.09/docker-18.09.4.zip" -usebasicparsing -outfile docker-18.09.4.zip`
 
-`expand-archive docker-18.09.4.zip C:\Program Files`
+`expand-archive docker-18.09.4.zip 'C:\Program Files'`
 
 `$oldpath = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path`
 `$newpath = “$oldpath;;C:\Program Files\docker”`
