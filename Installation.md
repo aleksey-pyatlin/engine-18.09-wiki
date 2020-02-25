@@ -10,7 +10,19 @@
 
 `expand-archive docker-18.09.4.zip C:\Program Files`
 
-`$Env:Path += ";C:\Program Files\docker;"`
+`$oldpath = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path`
+`$newpath = “$oldpath;;C:\Program Files\docker”`
+
+`Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $newPath`
+
+Now do one final check that it looks how you expect it:
+
+`Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Contro
+l\Session Manager\Environment' -Name PATH).Path`
+
+You can now restart your powershell terminal (or even reboot machine) and see that it doesn’t rollback to it’s old value again. Note the ordering of the paths may change so that it’s in alphabetical order, so make sure you check the whole line, to make it easier, you can split the output into rows by using the semi-colon as a delimeter:
+
+`($env:path).split(";")`
 
 `c:\Program Files\docker\dockerd --register-service`
 
